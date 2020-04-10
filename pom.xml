@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!--项目基本信息-->
+    <description>springboot-socks</description>
+    <modelVersion>4.0.0</modelVersion>
+    <name>springboot-socks</name>
+    <!--项目工程 -->
+    <groupId>com.weiliai</groupId>
+    <artifactId>springboot-socks</artifactId>
+    <version>1.0.0-RELEASE</version>
+    <packaging>pom</packaging>
+
+    <!--继承说明:这里继承springboot提供的父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <modules>
+        <module>springboot-schedule-task</module>
+    </modules>
+
+
+    <!--设置第三方依赖版本号 -->
+    <properties>
+        <mybatis.springboot.version>3.0.1</mybatis.springboot.version>
+        <mysql.connection.version>5.1.47</mysql.connection.version>
+    </properties>
+
+    <dependencies>
+        <!-- 热部署插件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <!-- 测试依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- 简化get/set方法 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- 配置文件自动提示 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+</project>
