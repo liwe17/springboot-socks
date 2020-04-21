@@ -22,6 +22,7 @@
 
     <modules>
         <module>springboot-schedule-task</module>
+        <module>springboot-param-valid</module>
     </modules>
 
 
@@ -29,32 +30,17 @@
     <properties>
         <mybatis.springboot.version>3.0.1</mybatis.springboot.version>
         <mysql.connection.version>5.1.47</mysql.connection.version>
+        <google.guava.version>24.0-jre</google.guava.version>
     </properties>
-
-    <dependencies>
-        <!-- 热部署插件 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-        </dependency>
-        <!-- 测试依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <!-- 简化get/set方法 -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!-- 配置文件自动提示 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
-
+    <!--包依赖管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <!--Google guava 工具类 -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google.guava.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
