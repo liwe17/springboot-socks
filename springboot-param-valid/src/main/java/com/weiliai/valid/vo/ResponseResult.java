@@ -1,6 +1,5 @@
 package com.weiliai.valid.vo;
 
-import com.weiliai.valid.constant.CommonConstant;
 import com.weiliai.valid.validenum.ResultEnum;
 import lombok.*;
 
