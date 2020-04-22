@@ -23,6 +23,8 @@
     <modules>
         <module>springboot-schedule-task</module>
         <module>springboot-param-valid</module>
+        <module>springboot-current-limiter</module>
+        <module>springboot-daily-case</module>
     </modules>
 
 
