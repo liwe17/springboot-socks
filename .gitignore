@@ -1,4 +1,4 @@
-itarget/ 
+/target/
 .idea/ 
 /out/ 
 *.iml
@@ -8,7 +8,7 @@ itarget/
 /.idea/libraries  
 .DS_Store  
 /build  
-/captures  
+/captures
   
 # Built application files  
 *.apk  
