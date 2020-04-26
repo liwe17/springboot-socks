@@ -20,9 +20,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @Author: Doug Li
@@ -119,7 +119,7 @@ public class RedisLimitAspect {
         DefaultRedisScript<List> redisScript2 = new DefaultRedisScript<>(REDIS_SCRIPT2, List.class);
         List<String> keys = Arrays.asList(redis2Limit.tokensKey(), redis2Limit.timestampKey());
         Object[] args = new Object[]{redis2Limit.rate(), redis2Limit.capacity(),
-                TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()),
+                Instant.now().getEpochSecond(), //时区是UTC,不是UTC+8,此处不影响
                 redis2Limit.requested()};
         List<Long> resultList = (List<Long>)redisTemplate.execute(redisScript2,keys,args);
         Assert.notNull(resultList,"resultList不能为null");
