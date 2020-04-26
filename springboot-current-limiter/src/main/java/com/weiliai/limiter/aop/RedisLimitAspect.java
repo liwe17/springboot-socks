@@ -84,6 +84,9 @@ public class RedisLimitAspect {
     }
 
     /**
+     * 计数器/时间窗口法
+     * 有个缺陷,假如在时间窗的前1%的时间内流量就达到顶峰了,那么在时间窗内还有99%的时间系统即使能够继续提供服务,
+     * 还是会被限流算法的这种缺陷阻断在门外,这种缺陷也被称为"突刺效应"
      * 构建lua脚本
      * @return lua脚本
      */
@@ -131,6 +134,7 @@ public class RedisLimitAspect {
     }
 
     /**
+     * 基于令牌桶
      * local tokens_key = KEYS[1] 当前限流的标识,可以是ip,或者在spring cloud系统中,可以是一个服务的serviceID
      * local timestamp_key = KEYS[2] 令牌桶刷新的时间戳,后面会被用来计算当前产生的令牌数
      *
