@@ -17,7 +17,10 @@
 2. 简化参数校验逻辑
 
 ##限流-springboot-current-limiter
-还在学习,未实现
+1. 基于guava实现单机节点
+2. 基于redis分布式实现
+
+使用AOP切面,也可使用拦截器
 
 ##日常-springboot-daily-case
 日常学习的小demo
