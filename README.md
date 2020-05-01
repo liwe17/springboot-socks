@@ -7,7 +7,7 @@
     2>定时任务只能被一个节点执行,需要使用锁实现.
 备注:目前只想到这两个问题
 
-##参数校验-springboot-param-valid
+## 参数校验-springboot-param-valid
 `
 @NotEmpty 用在集合类上面
 @NotBlank 用在String上面
@@ -16,11 +16,11 @@
 1. 统一的参数异常拦截器
 2. 简化参数校验逻辑
 
-##限流-springboot-current-limiter
+## 限流-springboot-current-limiter
 1. 基于guava实现单机节点
 2. 基于redis分布式实现
 
 使用AOP切面,也可使用拦截器
 
-##日常-springboot-daily-case
+## 日常-springboot-daily-case
 日常学习的小demo
