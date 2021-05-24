@@ -1,0 +1,8 @@
+#服务器端口
+server:
+  port: 8084
+
+#redis配置,使用默认即可
+
+swagger2:
+  enable: true
