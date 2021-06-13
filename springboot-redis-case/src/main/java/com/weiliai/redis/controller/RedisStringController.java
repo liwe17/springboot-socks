@@ -6,6 +6,7 @@ import com.weiliai.redis.utils.JSONUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -18,10 +19,14 @@ import javax.annotation.Resource;
 @RestController
 @Api(value = "Redis字符串应用")
 @Slf4j
+@RequestMapping("/string")
 public class RedisStringController {
 
     @Resource
     private RedisStringService redisStringService;
+
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
 
     @ApiOperation("初始化10条数据")
     @GetMapping(value = "/init")
@@ -42,6 +47,16 @@ public class RedisStringController {
     @PostMapping(value = "/updateById")
     public void updateById(@RequestBody Person person) {
         redisStringService.updateById("PERSON"+person.getId(),JSONUtils.writeValueAsString(person));
+    }
+
+
+    @ApiOperation("业务应用-文章阅读量")
+    @GetMapping("/view")
+    public void view(String viewId){
+        //redis key
+        String viewKey = "ARTICLE:"+viewId;
+        final Long n = stringRedisTemplate.opsForValue().increment(viewKey);
+        log.info("key=[{}],阅读量:[{}]",viewKey,n);
     }
 
 }
