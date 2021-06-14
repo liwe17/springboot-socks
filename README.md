@@ -42,15 +42,21 @@
     - com.weiliai.daily.RedisBloomFilterTest
 
 ## redis应用-springboot-redis-case
-### String场景
+> redis常见应用场景
+
+### 学习来源
+- Redis与SpringBoot一线互联网高并发实战
+    - https://www.bilibili.com/video/BV1GV411U78a?from=search&seid=15042623415898583497)
+
+### String应用
 - String.md
 - com.weiliai.redis.controller.RedisStringController
 
-### Hash场景
+### Hash应用
 - Hash.md
 - com.weiliai.redis.controller.RedisHashController
 
-### List场景
+### List应用
 - List.md
 - com.weiliai.redis.controller.RedisListController
 
