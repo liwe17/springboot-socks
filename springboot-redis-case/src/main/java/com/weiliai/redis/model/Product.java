@@ -1,6 +1,7 @@
 package com.weiliai.redis.model;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -10,6 +11,7 @@ import java.io.Serializable;
  * @Describe: 商品
  */
 @Data
+@Accessors(chain = true)
 public class Product implements Serializable {
 
     private Long id;
