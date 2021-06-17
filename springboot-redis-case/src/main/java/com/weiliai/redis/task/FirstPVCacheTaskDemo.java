@@ -19,7 +19,7 @@ import static com.weiliai.redis.task.PVTaskDemo.PV_MAP;
 @Component
 @Slf4j
 @SuppressWarnings("all")
-public class FirstPVCacheTask {
+public class FirstPVCacheTaskDemo {
 
     @Resource
     private RedisTemplate redisTemplate;

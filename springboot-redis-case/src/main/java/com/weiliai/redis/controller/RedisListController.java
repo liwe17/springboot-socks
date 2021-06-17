@@ -16,6 +16,9 @@ import javax.annotation.Resource;
 import java.util.Collections;
 import java.util.List;
 
+import static com.weiliai.redis.task.JHSTaskDemo.*;
+import static com.weiliai.redis.task.PVTaskDemo.CACHE_ARTICLE;
+
 /**
  * @Author: Doug Li
  * @Date 2021/6/13
@@ -27,14 +30,6 @@ import java.util.List;
 @RequestMapping("/list")
 @SuppressWarnings("all")
 public class RedisListController {
-
-    private static final String JHS_KEY = "jhs:key";
-
-    private static final String JHS_KEY_A = "jhs:key:A";
-
-    private static final String JHS_KEY_B = "jhs:key:B";
-
-    private static final String CACHE_ARTICLE = "article:";
 
     @Resource
     private RedisTemplate redisTemplate;

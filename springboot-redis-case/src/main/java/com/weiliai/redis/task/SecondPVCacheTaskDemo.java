@@ -22,7 +22,7 @@ import static com.weiliai.redis.task.PVTaskDemo.CACHE_ARTICLE;
 @Component
 @Slf4j
 @SuppressWarnings("all")
-public class SecondPVCacheTask {
+public class SecondPVCacheTaskDemo {
 
     @Resource
     private RedisTemplate redisTemplate;

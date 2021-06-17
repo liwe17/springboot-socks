@@ -19,13 +19,13 @@ import java.util.concurrent.TimeUnit;
 @Component
 @SuppressWarnings("all")
 @Slf4j
-public class JhsTaskDemo {
+public class JHSTaskDemo {
 
-    private static final String JHS_KEY = "jhs:key";
+    public static final String JHS_KEY = "jhs:key";
 
-    private static final String JHS_KEY_A = "jhs:key:A";
+    public static final String JHS_KEY_A = "jhs:key:A";
 
-    private static final String JHS_KEY_B = "jhs:key:B";
+    public static final String JHS_KEY_B = "jhs:key:B";
 
     @Resource
     private RedisTemplate redisTemplate;

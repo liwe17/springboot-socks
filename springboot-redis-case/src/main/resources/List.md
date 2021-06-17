@@ -280,6 +280,8 @@ B[LR]POP key1 [key2 ...] timeout
         - 一级JVM缓存Map<时间块,Map<文章id,访问量PV>>,然后定时push到redis list缓存Map<文章id,访问量PV>
         - 二级缓存redis,然后定时pop保存在数据库中,并同步到redis缓存的计数器incr
         
-        
+- 实例代码
+    - com.weiliai.redis.controller.RedisListController        
+
         
         
