@@ -7,12 +7,12 @@
 
 ## 操作命令
 ### PUSH 
-作用:以头插或尾插方式插入指定key队列中一个或多个元素
-语法:[LR]PUSH key value1 [value2 ...]
+- 作用:以头插或尾插方式插入指定key队列中一个或多个元素
+- 语法:[LR]PUSH key value1 [value2 ...]
 
 ### LRANGE
-作用:获取列表指定范围内的元素
-语法:LRANGE key start stop
+- 作用:获取列表指定范围内的元素
+- 语法:LRANGE key start stop
 
 ```text
 127.0.0.1:6379> lpush products 1 2 3
@@ -30,8 +30,8 @@
 ```
 
 ### LINSERT
-作用:在列表的元素前或者后插入元素
-语法:LINSERT key BEFORE|AFTER pivot value
+- 作用:在列表的元素前或者后插入元素
+- 语法:LINSERT key BEFORE|AFTER pivot value
 
 ```text
 127.0.0.1:6379> lrange products 0 -1
@@ -66,8 +66,8 @@
 ```
 
 ### LLEN 
-作用:获取列表长度
-语法:LLEN key
+- 作用:获取列表长度
+- 语法:LLEN key
 
 ```text
 127.0.0.1:6379> lrange products 0 -1
@@ -84,8 +84,8 @@
 ```
 
 ### LINDEX 
-作用:通过索引获取列表中的元素
-语法:LINDEX key index
+- 作用:通过索引获取列表中的元素
+- 语法:LINDEX key index
 
 ```text
 127.0.0.1:6379> lrange products 0 -1
@@ -101,8 +101,8 @@
 127.0.0.1:6379>
 ```
 ### LSET
-作用:通过索引设置列表元素的值
-语法:LSET key index value
+- 作用:通过索引设置列表元素的值
+- 语法:LSET key index value
 
 ```text
 127.0.0.1:6379> lrange products 0 -1
@@ -131,8 +131,8 @@ OK
 ```
 
 ### LTRIM
-作用:截取队列指定区间的元素,其余元素都删除
-语法:LTRIM key start end
+- 作用:截取队列指定区间的元素,其余元素都删除
+- 语法:LTRIM key start end
 
 ```text
 127.0.0.1:6379> lrange products 0 -1
@@ -161,8 +161,8 @@ OK
 ```
 
 ### LREM
-说明:移除列表元素
-语法:LREM key count value
+- 说明:移除列表元素
+- 语法:LREM key count value
 
 ```text
 127.0.0.1:6379> lpush test a 1 a 2 a 3 a 4 a 5 6
@@ -202,12 +202,12 @@ OK
 127.0.0.1:6379>
 ```
 ### POP
-作用:从队列的头或未弹出节点元素(返回该元素并从队列中删除)
-语法:[LR]POP key
+- 作用:从队列的头或未弹出节点元素(返回该元素并从队列中删除)
+- 语法:[LR]POP key
 
 ### RPOPLPUSH 
-RPOPLPUSH source destination
-移除列表的最后一个元素,并将该元素添加到另一个列表并返回
+- RPOPLPUSH source destination
+- 移除列表的最后一个元素,并将该元素添加到另一个列表并返回
 
 ```text
 127.0.0.1:6379> lpush src 1 2 3
@@ -236,8 +236,8 @@ RPOPLPUSH source destination
 ```
 
 ### B[LR]POP 
-B[LR]POP key1 [key2 ...] timeout
-移出并获取列表的第一个或最后一个元素,如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止.
+- B[LR]POP key1 [key2 ...] timeout
+- 移出并获取列表的第一个或最后一个元素,如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止.
 
 ```text
 127.0.0.1:6379> lpush blist 1 2

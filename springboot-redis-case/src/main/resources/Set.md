@@ -22,12 +22,12 @@ card(A)=3
 
 ## 操作命令
 ### SADD
-作用:向名称为key的set中添加元素member
-语法: SADD key member [member ...]
+- 作用:向名称为key的set中添加元素member
+- 语法: SADD key member [member ...]
 
 ### SMEMBERS
-作用:返回名称为key的set的所有元素
-语法:SMEMBERS key
+- 作用:返回名称为key的set的所有元素
+- 语法:SMEMBERS key
 
 ```text
 127.0.0.1:6379> sadd users u1
@@ -42,12 +42,12 @@ card(A)=3
 ```
 
 ### SISMEMBER
-作用:member是否是名称为key的set的元素
-语法:SISMEMBER key member
+- 作用:member是否是名称为key的set的元素
+- 语法:SISMEMBER key member
 
 ## SCARD
-作用:返回名称为key的set的基数,一个集合中元素的数量
-语法:SCARD key
+- 作用:返回名称为key的set的基数,一个集合中元素的数量
+- 语法:SCARD key
 
 ```text
 127.0.0.1:6379> smembers users
@@ -64,8 +64,8 @@ card(A)=3
 ```
 
 ## SMOVE
-作用:将member元素从source集合移动到destination集合
-语法:SMOVE source destination member
+- 作用:将member元素从source集合移动到destination集合
+- 语法:SMOVE source destination member
 
 ```text
 127.0.0.1:6379> smembers users
@@ -87,8 +87,8 @@ card(A)=3
 ```
 
 ## SRANDMEMBER
-作用:随机返回名称为key的set的元素
-语法:SRANDMEMBER key [count]
+- 作用:随机返回名称为key的set的元素
+- 语法:SRANDMEMBER key [count]
 
 ```text
 127.0.0.1:6379> smembers users
@@ -108,8 +108,8 @@ card(A)=3
 ```
 
 ## SPOP
-作用:随机返回并删除名称为key的set中一个元素
-语法:SPOP key
+- 作用:随机返回并删除名称为key的set中一个元素
+- 语法:SPOP key
 
 ```text
 127.0.0.1:6379> smembers users
@@ -129,8 +129,8 @@ card(A)=3
 ```
 
 ## SINTER
-作用:求交集
-语法:SINTER key [key ...]
+- 作用:求交集
+- 语法:SINTER key [key ...]
 
 ```text
 127.0.0.1:6379> smembers blacklist
@@ -164,8 +164,8 @@ card(A)=3
 ```
 
 ## SINTERSTORE
-作用:求交集并将交集保存到destination key的集合
-语法:SINTERSTORE destination key [key ...]
+- 作用:求交集并将交集保存到destination key的集合
+- 语法:SINTERSTORE destination key [key ...]
 
 ```text
 127.0.0.1:6379> sadd group1 1 2 3 4
@@ -191,12 +191,12 @@ card(A)=3
 ```
 
 ## SUNION
-作用:并集
-语法:SUNION key [key ...]
+- 作用:并集
+- 语法:SUNION key [key ...]
 
 ## SUNIONSTORE
-作用:求并集并将并集保存到destination key的集合
-语法:SUNIONSTORE destination key [key ...]
+- 作用:求并集并将并集保存到destination key的集合
+- 语法:SUNIONSTORE destination key [key ...]
 
 ```text
 127.0.0.1:6379> smembers group1
@@ -229,12 +229,12 @@ card(A)=3
 ```
 
 ## SDIFF
-作用:求差集
-语法:SDIFF key [key ...]
+- 作用:求差集
+- 语法:SDIFF key [key ...]
 
 ## SDIFFSTORE
-作用:求差集并将差集保存到destination key的集合
-语法:SDIFFSTORE destination key [key ...]
+- 作用:求差集并将差集保存到destination key的集合
+- 语法:SDIFFSTORE destination key [key ...]
 
 ```text
 127.0.0.1:6379> smembers group1
@@ -296,3 +296,7 @@ card(A)=3
 - 实现方式
     - 先同步到set中
     - 使用spop随机弹出
+    
+### 代码实例
+
+- com.weiliai.redis.controller.RedisSetController

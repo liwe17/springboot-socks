@@ -32,12 +32,20 @@ public class RedisSetController {
     @Resource
     private RedisTemplate redisTemplate;
 
+    /**
+     * 模拟黑名单初始化
+     * @see com.weiliai.redis.task.TBBlackListTaskDemo
+     */
     @ApiOperation("黑名单校验")
     @GetMapping("/isBlacklist/{userId}")
     public boolean isBlacklist(@PathVariable("userId") Integer userId) {
         return redisTemplate.opsForSet().isMember(BLACKLIST_KEY,userId);
     }
 
+    /**
+     * 模拟奖品初始化
+     * @see com.weiliai.redis.task.JDCrowdTaskDemo
+     */
     @ApiOperation("京豆抽奖")
     @GetMapping("/jdPrize")
     public String jdPrize() {
@@ -52,6 +60,10 @@ public class RedisSetController {
         return String.format("获得%s个京豆",result);
     }
 
+    /**
+     * 模拟抽奖名单
+     * @see com.weiliai.redis.task.YearCrowdTaskDemo
+     */
     @ApiOperation("年会抽奖")
     @GetMapping("/yearPrize/{count}")
     public List<Integer> yearPrize(@PathVariable("count") Integer count) {

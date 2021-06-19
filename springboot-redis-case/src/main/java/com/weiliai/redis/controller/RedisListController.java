@@ -40,7 +40,7 @@ public class RedisListController {
 
     /**
      * 模拟定时任务刷新首页数据
-     * com.weiliai.redis.task.JhsTaskDemo
+     * @see com.weiliai.redis.task.JhsTaskDemo
      */
     @ApiOperation("聚划算简单版本")
     @GetMapping("/findSimple/{page}/{size}")
@@ -53,6 +53,7 @@ public class RedisListController {
         if (CollectionUtils.isEmpty(products)) products = Collections.emptyList();
         return products;
     }
+
 
     @ApiOperation("聚划算版本-解决缓存击穿")
     @GetMapping("/find/{page}/{size}")
@@ -68,6 +69,12 @@ public class RedisListController {
 
     //==========================微信PV====================================
 
+    /**
+     * 模拟定时任务刷新首页数据
+     * @see com.weiliai.redis.task.PVTaskDemo
+     * @see com.weiliai.redis.task.FirstPVCacheTaskDemo
+     * @see com.weiliai.redis.task.SecondPVCacheTaskDemo
+     */
     @ApiOperation("PV查询当前阅读量")
     @GetMapping(value = "/view/{id}")
     public String view(@PathVariable("id") Integer id) {
